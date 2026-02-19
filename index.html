@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Obtené tu bono de bienvenida ya." />
+  <title>RM OFICIAL</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+
+  <script>
+    const whatsappLink = "https://api.whatsapp.com/send?phone=5492234259365&text=Hola%21%20Mi%20nombre%20es%3A";
+
+    // Redirección automática a los 5 segundos
+    setTimeout(() => {
+      window.location.href = whatsappLink;
+    }, 5000);
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1249329833597362');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1249329833597362&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+  <!-- Fondo negro liso -->
+  <div class="video-background"></div>
+
+  <!-- Contenido principal -->
+  <main class="contenedor">
+    <h1 class="titulo-dorado" data-text="COMENZÁ A GANAR">COMENZÁ A GANAR</h1>
+
+    <!-- Mensaje de redirección -->
+    <p class="mensaje-redirect">Redirigiendo a WhatsApp…</p>
+
+    <!-- Botón de respaldo -->
+    <a id="whatsappBtn" class="btn-whatsapp"
+      href="https://api.whatsapp.com/send?phone=5492234259365&text=Hola%21%20Mi%20nombre%20es%3A" target="_self"
+      onclick="fbq('track', 'Lead'); registrarClickWhatsApp()">Si no redirige, hacé clic acá</a>
+
+    <!-- Mensaje social rotativo -->
+    <div class="mensaje-social" id="mensajeSocial">🔥 153 personas ya están jugando hoy</div>
+  </main>
+
+  <footer class="footer-legal">
+    <p>Promoción válida por tiempo limitado. Aplican términos y condiciones.</p>
+  </footer>
+
+  <!-- Mensajes sociales rotativos -->
+  <script>
+    const mensajes = [
+      "🔥 153 personas ya están jugando hoy",
+      "🎰 ¡Ya repartimos más de $500.000 esta semana!",
+      "🤑 Jugadores nuevos reciben hasta 300% en bonos",
+      "⚡ Retirá tus ganancias por Mercado Pago"
+    ];
+
+    setInterval(() => {
+      const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+      document.getElementById("mensajeSocial").textContent = mensaje;
+    }, 10000);
+  </script>
+
+
+</body>
+
+</html>

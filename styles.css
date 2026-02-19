@@ -1,0 +1,204 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+  }
+  
+  .contenedor {
+    padding: 2rem;
+  }
+  
+.titulo-dorado {
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 5px;
+  font-size: 64px;
+  font-weight: bold;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #462523 0%, 
+    #cb9b51 22%, 
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #462523 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: relative;
+  animation: neonGlow 10s ease-in-out infinite alternate;
+}
+
+/* sombra blanca animada tipo neón */
+@keyframes neonGlow {
+  100% {
+    text-shadow:
+      0 0 1px #ffe600,
+      0 0 1px #ffe600,
+      0 0 1px #ffe600,
+      0 0 1px #ffe600;
+  }
+  100% {
+    text-shadow:
+      0 0 1px #ffe600,
+      0 0 1px #ffe600,
+      0 0 1px #ffe600,
+      0 0 1px #ffe600;
+  }
+}
+
+/* capa con borde dorado animado */
+.titulo-dorado::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: transparent;
+  background: linear-gradient(
+    to right,
+    #462523 0%, 
+    #cb9b51 22%, 
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #462523 100%
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px transparent;
+  animation: glowDorado 5s linear infinite;
+}
+
+@keyframes glowDorado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  
+  .btn-whatsapp {
+    height: 7.5em;
+    width: 18.75em;
+    position: relative;
+    box-shadow: 0 1.25em 2.18em rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 0.31em;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+  }
+  .btn-whatsapp::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to right,
+    #fd004c 2.62em,
+    #fe9000 5.25em,
+    #fff020 7.87em,
+    #3edf4b 10.5em,
+    #3363ff 15.75em,
+    #fd004c 18.75em
+  );
+  background-size: 125em;
+  animation: desplazamiento-rgb 10s linear infinite;
+  z-index: 1;
+}
+
+  .btn-whatsapp::after {
+    content: "⚡ ¡Chateá y recibí tu bono!";
+    position: absolute;
+    background-color: #1c1b29;
+    height: 85%;
+    width: 93%;
+    top: 7.5%;
+    left: 3.5%;
+    border-radius: 0.2em;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+    text-align: center;
+  }
+
+  
+  .mensaje-social {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #bbb;
+    font-style: italic;
+  }
+  
+  .footer-legal {
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+  }
+  
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Negro liso */
+  z-index: -1; /* Para que quede de fondo */
+}
+
+
+
+@keyframes desplazamiento-rgb {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -125em 0;
+  }
+}
+
+.mensaje-redirect {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Reutilizamos el estilo base del botón si querés que el botón de respaldo sea igual */
+#whatsappBtn {
+  margin-top: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
